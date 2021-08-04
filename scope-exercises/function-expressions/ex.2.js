@@ -1,8 +1,8 @@
-function printRecords(recordIds) {
+var printRecords = (recordIds) => {
   var records = [];
 
-  recordIds.forEach(function checkInRecords(id, idx) {
-    var record = studentRecords.find(function findRecordById(record) {
+  recordIds.forEach((id, idx) => {
+    var record = studentRecords.find((record) => {
       if (record.id === id) {
         return true;
       }
@@ -13,7 +13,7 @@ function printRecords(recordIds) {
     }
   });
 
-  records.forEach(function printRecord(record) {
+  records.forEach((record) => {
     console.log(
       `${record.name} (${record.id}): ${
         record.paid === true ? "Paid" : "Not Paid"
@@ -22,30 +22,30 @@ function printRecords(recordIds) {
   });
 
   return records;
-}
+};
 
-function paidStudentsToEnroll() {
+var paidStudentsToEnroll = () => {
   var returnEnrolled = currentEnrollment;
-  studentRecords.forEach(function enrollPaid(record) {
+  studentRecords.forEach((record) => {
     if (record.paid === true && returnEnrolled.includes(record.id) === false) {
       returnEnrolled.push(record.id);
     }
   });
   return returnEnrolled;
-}
+};
 
-function remindUnpaid(recordIds) {
+var remindUnpaid = (recordIds) => {
   // TODO
   var unpaidList = studentRecords
-    .filter(function filterByPaid(record) {
+    .filter((record) => {
       return record.paid === false;
     })
-    .map(function mapToIds(record) {
+    .map((record) => {
       return record.id;
     });
 
   printRecords(unpaidList);
-}
+};
 
 // ********************************
 

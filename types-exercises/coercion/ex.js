@@ -1,5 +1,3 @@
-// TODO: write the validation functions
-
 function isValidName(name) {
   if (
     typeof name === "string" &&
@@ -29,38 +27,37 @@ function hoursAttended(attended, length) {
 }
 
 // tests:
-console.log(isValidName("Frank") === true);
-console.log(hoursAttended(6, 10) === true);
-console.log(hoursAttended(6, "10") === true);
-console.log(hoursAttended("6", 10) === true);
-console.log(hoursAttended("6", "10") === true);
-
-console.log(isValidName(false) === false);
-console.log(isValidName(null) === false);
-console.log(isValidName(undefined) === false);
-console.log(isValidName("") === false);
-console.log(isValidName("  \t\n") === false);
-console.log(isValidName("X") === false);
-console.log(hoursAttended("", 6) === false);
-console.log(hoursAttended(6, "") === false);
-console.log(hoursAttended("", "") === false);
-console.log(hoursAttended("foo", 6) === false);
-console.log(hoursAttended(6, "foo") === false);
-console.log(hoursAttended("foo", "bar") === false);
-console.log(hoursAttended(null, null) === false);
-console.log(hoursAttended(null, undefined) === false);
-console.log(hoursAttended(undefined, null) === false);
-console.log(hoursAttended(undefined, undefined) === false);
-console.log(hoursAttended(false, false) === false);
-console.log(hoursAttended(false, true) === false);
-console.log(hoursAttended(true, false) === false);
-console.log(hoursAttended(true, true) === false);
-console.log(hoursAttended(10, 6) === false);
-console.log(hoursAttended(10, "6") === false);
-console.log(hoursAttended("10", 6) === false);
-console.log(hoursAttended("10", "6") === false);
-console.log(hoursAttended(6, 10.1) === false);
-console.log(hoursAttended(6.1, 10) === false);
-console.log(hoursAttended(6, "10.1") === false);
-console.log(hoursAttended("6.1", 10) === false);
-console.log(hoursAttended("6.1", "10.1") === false);
+console.log("0, ", isValidName("Frank") === true);
+console.log("1, ", hoursAttended(6, 10) === true);
+console.log("2, ", hoursAttended(6, "10") === true);
+console.log("3, ", hoursAttended("6", 10) === true);
+console.log("4, ", hoursAttended("6", "10") === true);
+"5, ", console.log("6, ", isValidName(false) === false);
+console.log("7, ", isValidName(null) === false);
+console.log("8, ", isValidName(undefined) === false);
+console.log("9, ", isValidName("") === false);
+console.log("10, ", isValidName("  \t\n") === false);
+console.log("11, ", isValidName("X") === false);
+console.log("12, ", hoursAttended("", 6) === false);
+console.log("13, ", hoursAttended(6, "") === false);
+console.log("14, ", hoursAttended("", "") === false);
+console.log("15, ", hoursAttended("foo", 6) === false);
+console.log("16, ", hoursAttended(6, "foo") === false);
+console.log("17, ", hoursAttended("foo", "bar") === false);
+console.log("18, ", hoursAttended(null, null) === false);
+console.log("19, ", hoursAttended(null, undefined) === false);
+console.log("20, ", hoursAttended(undefined, null) === false);
+console.log("21, ", hoursAttended(undefined, undefined) === false);
+console.log("22, ", hoursAttended(false, false) === false);
+console.log("23, ", hoursAttended(false, true) === false);
+console.log("24, ", hoursAttended(true, false) === false);
+console.log("25, ", hoursAttended(true, true) === false);
+console.log("26, ", hoursAttended(10, 6) === false);
+console.log("27, ", hoursAttended(10, "6") === false);
+console.log("28, ", hoursAttended("10", 6) === false);
+console.log("29, ", hoursAttended("10", "6") === false);
+console.log("30, ", hoursAttended(6, 10.1) === false);
+console.log("31, ", hoursAttended(6.1, 10) === false);
+console.log("32, ", hoursAttended(6, "10.1") === false);
+console.log("33, ", hoursAttended("6.1", 10) === false);
+console.log("34, ", hoursAttended("6.1", "10.1") === false);

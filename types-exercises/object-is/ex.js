@@ -1,16 +1,15 @@
-// define polyfill for `Object.is(..)`
+if (!Object.is || true) {
+  Object.is = function (a, b) {
+    if (isItNaN(a) && isItNaN(b)) {
+      return true;
+    }
+    if (a === 0 && b === 0) {
+      return isNegativeZero(a) === isNegativeZero(b);
+    }
 
-Object.is = function (a, b) {
-  if (isItNaN(a) && isItNaN(b)) {
-    return true;
-  }
-  if (a === 0 && b === 0) {
-    return isNegativeZero(a) === isNegativeZero(b);
-  }
-
-  return a === b;
-};
-
+    return a === b;
+  };
+}
 // function isNotANumber(x) {
 //   if (typeof x === "number" && x.toString() === "NaN") {
 //     return true;
@@ -29,7 +28,8 @@ function isNegativeZero(x) {
   }
 }
 
-tests: console.log(Object.is(42, 42) === true);
+// tests:
+console.log("0, ", Object.is(42, 42) === true);
 console.log("1, ", Object.is("foo", "foo") === true);
 console.log("2, ", Object.is(false, false) === true);
 console.log("3, ", Object.is(null, null) === true);
